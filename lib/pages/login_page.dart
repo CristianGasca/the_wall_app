@@ -3,7 +3,9 @@ import 'package:the_wall_app/components/button.dart';
 import 'package:the_wall_app/components/text_filed.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  final Function()? onTap;
+
+  const LoginPage({super.key, required this.onTap });
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -63,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),),
                     const SizedBox(width: 4),
                     GestureDetector(
-                      onTap: (){},
+                      onTap: widget.onTap,
                       child: const Text("Register now!", style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.blue,
